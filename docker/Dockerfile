@@ -126,6 +126,9 @@ COPY ./docker/docker-entrypoint.sh ./docker/.env $DISPATCH_CONF/
 EXPOSE 8000
 VOLUME /var/lib/dispatch/files
 
+RUN set -x \
+    && chmod +x $DISPATCH_CONF/docker-entrypoint.sh
+
 ENTRYPOINT exec $DISPATCH_CONF/docker-entrypoint.sh $0 $@
 CMD ["server"]
 
