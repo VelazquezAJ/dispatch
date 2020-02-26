@@ -210,4 +210,3 @@ node_modules
 release
 
 # exclude docker env files
-docker/.env
